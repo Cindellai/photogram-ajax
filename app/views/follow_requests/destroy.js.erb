@@ -1,0 +1,8 @@
+<%# Selector for the follow/unfollow button to be replaced %>
+var followUnfollowSelector = $(".<%= dom_id(@follow_request.sender) %>_<%= dom_id(@follow_request.recipient) %>_follow_unfollow");
+
+<%# New follow/unfollow button HTML to replace the existing one %>
+var newFollowUnfollowHtml = "<%= j(render 'follow_requests/follow_unfollow', sender: @follow_request.sender, recipient: @follow_request.recipient) %>";
+
+<%# Replace the existing follow/unfollow button with the new HTML %>
+followUnfollowSelector.replaceWith(newFollowUnfollowHtml);
