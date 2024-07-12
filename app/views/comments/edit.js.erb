@@ -1,0 +1,8 @@
+<%# Selector for the comment to be replaced %>
+var commentSelector = $("#<%= dom_id(@comment) %>");
+
+<%# New comment form HTML to replace the existing comment %>
+var newCommentFormHtml = "<%= j(render 'comments/form', comment: @comment) %>";
+
+<%# Replace the existing comment with the new comment form HTML %>
+commentSelector.replaceWith(newCommentFormHtml);

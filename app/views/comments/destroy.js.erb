@@ -1,0 +1,10 @@
+<%# Log a goodbye message to the console %>
+console.log("bye!");
+
+<%# Selector for the comment to be faded out %>
+var commentSelector = $("#<%= dom_id(@comment) %>");
+
+<%# Fade out the comment over 1000 milliseconds and then remove it %>
+commentSelector.fadeOut(1000, function() {
+  $(this).remove();
+});
